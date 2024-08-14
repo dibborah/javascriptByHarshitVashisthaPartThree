@@ -64,25 +64,33 @@ const heading7 = document.querySelector('.headling7');
 // }, 1000);
 
 
-const changeText = (element, time, color, text, onSuccess) => {
+const changeText = (element, time, color, text, onSuccess, onFailure) => {
     setTimeout(() => {
-        if(element) {
+        if (element) {
             element.style.color = color;
             element.textContent = text;
-        }
-        if(onSuccess) {
-            onSuccess();
+            if (onSuccess) {
+                onSuccess();
+            }
+        } else {
+            if (onFailure) {
+                onFailure();
+            }
         }
     }, time);
 };
 
 setTimeout(changeText(heading1, 1000, 'violet', 'One', () => {
-    changeText(heading2,2000, 'purple', 'Two', () => {
-        changeText(heading3, 2000, 'red', 'Three',() => {
+    changeText(heading2, 2000, 'purple', 'Two', () => {
+        changeText(heading3, 2000, 'red', 'Three', () => {
             changeText(heading4, 1000, 'pink', 'Four', () => {
                 changeText(heading5, 2000, 'green', 'Five', () => {
                     changeText(heading6, 3000, 'blue', 'Six', () => {
-                        changeText(heading7, 1000, 'brown', 'Seven');
+                        changeText(heading7, 1000, 'brown', 'Seven', () => {
+                            changeText(heading8 = '', 1000, 'white', 'Eight', undefined, () => {
+                                console.log('No further h1Elements!!! Callback ends');
+                            })
+                        });
                     })
                 })
             })
