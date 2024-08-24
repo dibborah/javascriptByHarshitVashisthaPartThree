@@ -25,17 +25,17 @@ console.log('script start');
 
 const id = setTimeout(function hello() {// This setTimeout is not a blocking code// This is a non-blocking asynchronous code// executed in the background by the browser
     console.log('inside setTimeout!!!');
-}, 1000);// Remember this 1000ms is a minimum time delay
+}, 0);// Remember this 1000ms is a minimum time delay
 // matlab kam se kam 1000ms lagega. Jyada jitna v lag skta hain depending upon other synchronous blocking code
 
 // This 1000ms in the setTimeout, the browser is counting
 
 
-// for(let i = 0; i < 100; i++){
-    //     console.log("...");
-    // }
-    
+for (let i = 1; i < 100; i++) {
+    console.log("...");
+}
+
 console.log('script end');
-clearTimeout(id);
+clearTimeout(id);// This fc removes setTimeout callback from the callback queue
 
 
