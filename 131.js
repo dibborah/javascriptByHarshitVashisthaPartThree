@@ -30,11 +30,13 @@ const randomColorGenerator = () => {
 
 const rgb = randomColorGenerator();
 
-const clearId = setInterval(() => {
+const intervalId = setInterval(() => {
     body.style.background = randomColorGenerator();
 },1000);
 
 button.addEventListener('click', () => {
-    clearInterval(clearId);
+    clearInterval(intervalId);
+    button.textContent = body.style.background;
 })
+
 
