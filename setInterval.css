@@ -1,0 +1,21 @@
+
+button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.5rem 1rem;
+    /* background: black;
+    color: white; */
+    border: none;
+    outline: none;
+    font-size: 3rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px #00000036;
+    transition: all 0.4s;
+}
+
+button:hover{
+    box-shadow: 0px 0px 15px #0000006a;
+}
