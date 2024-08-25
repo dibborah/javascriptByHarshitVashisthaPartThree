@@ -1,5 +1,7 @@
 // XHR using promises
 
+// A promise is always resolves with a value (The value may be sometimes 'undefined' but always resolves with a value)
+
 const getPosts = (method, URL) => {
     return new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
